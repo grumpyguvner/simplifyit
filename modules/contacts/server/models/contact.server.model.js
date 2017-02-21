@@ -14,13 +14,13 @@ var ContactSchema = new Schema({
     type: String,
     trim: true,
     default: '',
-    validate: 'First name is required'
+    required: 'First name is required'
   },
   lastName: {
     type: String,
     trim: true,
     default: '',
-    validate: 'Last name is required'
+    required: 'Last name is required'
   },
   displayName: {
     type: String,
@@ -35,7 +35,7 @@ var ContactSchema = new Schema({
     lowercase: true,
     trim: true,
     default: '',
-    validate: 'Email address is required'
+    validate: [validateLocalStrategyEmail, 'Email address is required']
   },
   created: {
     type: Date,
