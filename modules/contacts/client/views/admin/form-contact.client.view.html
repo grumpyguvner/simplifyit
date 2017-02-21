@@ -11,15 +11,25 @@
     <form name="vm.form.contactForm" class="form-horizontal" ng-submit="vm.save(vm.form.contactForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="title">Title</label>
-          <input name="title" type="text" ng-model="vm.contact.title" id="title" class="form-control" placeholder="Title" required autofocus>
-          <div ng-messages="vm.form.contactForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Contact title is required.</p>
+          <label class="control-label" for="firstName">First Name</label>
+          <input name="firstName" type="text" ng-model="vm.contact.firstName" id="firstName" class="form-control" placeholder="First Name" required autofocus>
+          <div ng-messages="vm.form.contactForm.firstName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">First Name is required.</p>
           </div>
         </div>
-        <div class="form-group">
-          <label class="control-label" for="content">Content</label>
-          <textarea name="content" data-ng-model="vm.contact.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="lastName">Last Name</label>
+          <input name="lastName" type="text" ng-model="vm.contact.lastName" id="lastName" class="form-control" placeholder="Last Name" required>
+          <div ng-messages="vm.form.contactForm.lastName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Last Name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="email">Email</label>
+          <input name="email" type="text" ng-model="vm.contact.email" id="email" class="form-control" placeholder="Email" required>
+          <div ng-messages="vm.form.contactForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email is required.</p>
+          </div>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.contact._id ? 'Update' : 'Create'}}</button>

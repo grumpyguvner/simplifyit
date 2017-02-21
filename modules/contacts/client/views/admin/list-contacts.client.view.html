@@ -16,8 +16,8 @@
         <span ng-if="contact.user" ng-bind="contact.user.displayName"></span>
         <span ng-if="!contact.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" data-ng-bind="contact.title"></h4>
-      <p class="list-group-item-text" data-ng-bind="contact.content"></p>
+      <h4 class="list-group-item-heading" data-ng-bind="contact.displayName"></h4>
+      <p class="list-group-item-text" data-ng-bind="contact.email"></p>
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="contacts.$resolved && !contacts.length">

@@ -46,8 +46,10 @@ exports.read = function (req, res) {
 exports.update = function (req, res) {
   var contact = req.contact;
 
-  contact.title = req.body.title;
-  contact.content = req.body.content;
+  contact.firstName = req.body.firstName;
+  contact.lastName = req.body.lastName;
+  contact.displayName = contact.firstName + ' ' + contact.lastName;
+  contact.email = req.body.email;
 
   contact.save(function (err) {
     if (err) {

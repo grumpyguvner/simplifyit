@@ -10,20 +10,36 @@ var mongoose = require('mongoose'),
  * Contact Schema
  */
 var ContactSchema = new Schema({
+  firstName: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: 'First name is required'
+  },
+  lastName: {
+    type: String,
+    trim: true,
+    default: '',
+    validate: 'Last name is required'
+  },
+  displayName: {
+    type: String,
+    trim: true
+  },
+  email: {
+    type: String,
+    index: {
+      unique: true,
+      sparse: true // For this to work on a previously indexed field, the index must be dropped & the application restarted.
+    },
+    lowercase: true,
+    trim: true,
+    default: '',
+    validate: 'Email address is required'
+  },
   created: {
     type: Date,
     default: Date.now
-  },
-  title: {
-    type: String,
-    default: '',
-    trim: true,
-    required: 'Title cannot be blank'
-  },
-  content: {
-    type: String,
-    default: '',
-    trim: true
   },
   user: {
     type: Schema.ObjectId,
