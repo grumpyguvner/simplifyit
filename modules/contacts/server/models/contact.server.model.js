@@ -7,6 +7,13 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
+ * A Validation function for local strategy email
+ */
+var validateLocalStrategyEmail = function (email) {
+  return ((this.provider !== 'local' && !this.updated) || validator.isEmail(email, { require_tld: false }));
+};
+
+/**
  * Contact Schema
  */
 var ContactSchema = new Schema({
