@@ -12,6 +12,7 @@
       title: 'Contacts',
       state: 'contacts',
       type: 'dropdown',
+      position: 5,
       roles: ['*']
     });
 
