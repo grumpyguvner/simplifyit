@@ -11,10 +11,10 @@
     <form name="vm.form.orderForm" class="form-horizontal" ng-submit="vm.save(vm.form.orderForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="title">Title</label>
-          <input name="title" type="text" ng-model="vm.order.title" id="title" class="form-control" placeholder="Title" required autofocus>
-          <div ng-messages="vm.form.orderForm.title.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Order title is required.</p>
+          <label class="control-label" for="orderRef">Order Reference</label>
+          <input name="orderRef" type="text" ng-model="vm.order.orderRef" id="orderRef" class="form-control" placeholder="OrderRef" required autofocus>
+          <div ng-messages="vm.form.orderForm.orderRef.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Order Reference is required.</p>
           </div>
         </div>
         <div class="form-group">

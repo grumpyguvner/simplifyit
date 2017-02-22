@@ -31,7 +31,7 @@ describe('Order Model Unit Tests:', function () {
 
     user.save(function () {
       order = new Order({
-        title: 'Order Title',
+        orderRef: 'Order Reference',
         content: 'Order Content',
         user: user
       });
@@ -49,8 +49,8 @@ describe('Order Model Unit Tests:', function () {
       });
     });
 
-    it('should be able to show an error when try to save without title', function (done) {
-      order.title = '';
+    it('should be able to show an error when try to save without orderRef', function (done) {
+      order.orderRef = '';
 
       order.save(function (err) {
         should.exist(err);

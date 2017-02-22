@@ -54,7 +54,7 @@
       // create mock order
       mockOrder = new OrdersService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Order about MEAN',
+        orderRef: 'An Order about MEAN',
         content: 'MEAN rocks!'
       });
 
@@ -81,7 +81,7 @@
       beforeEach(function () {
         // Create a sample order object
         sampleOrderPostData = new OrdersService({
-          title: 'An Order about MEAN',
+          orderRef: 'An Order about MEAN',
           content: 'MEAN rocks!'
         });
 

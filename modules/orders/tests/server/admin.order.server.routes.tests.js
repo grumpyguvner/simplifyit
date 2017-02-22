@@ -51,7 +51,7 @@ describe('Order Admin CRUD tests', function () {
     // Save a user to the test db and create new order
     user.save(function () {
       order = {
-        title: 'Order Title',
+        orderRef: 'Order Reference',
         content: 'Order Content'
       };
 
@@ -95,7 +95,7 @@ describe('Order Admin CRUD tests', function () {
 
                 // Set assertions
                 (orders[0].user._id).should.equal(userId);
-                (orders[0].title).should.match('Order Title');
+                (orders[0].orderRef).should.match('Order Reference');
 
                 // Call the assertion callback
                 done();
@@ -127,8 +127,8 @@ describe('Order Admin CRUD tests', function () {
               return done(orderSaveErr);
             }
 
-            // Update order title
-            order.title = 'WHY YOU GOTTA BE SO MEAN?';
+            // Update orderRef
+            order.orderRef = 'WHY YOU GOTTA BE SO MEAN?';
 
             // Update an existing order
             agent.put('/api/orders/' + orderSaveRes.body._id)
@@ -142,7 +142,7 @@ describe('Order Admin CRUD tests', function () {
 
                 // Set assertions
                 (orderUpdateRes.body._id).should.equal(orderSaveRes.body._id);
-                (orderUpdateRes.body.title).should.match('WHY YOU GOTTA BE SO MEAN?');
+                (orderUpdateRes.body.orderRef).should.match('WHY YOU GOTTA BE SO MEAN?');
 
                 // Call the assertion callback
                 done();
@@ -151,9 +151,9 @@ describe('Order Admin CRUD tests', function () {
       });
   });
 
-  it('should not be able to save an order if no title is provided', function (done) {
-    // Invalidate title field
-    order.title = '';
+  it('should not be able to save an order if no orderRef is provided', function (done) {
+    // Invalidate orderRef field
+    order.orderRef = '';
 
     agent.post('/api/auth/signin')
       .send(credentials)
@@ -173,7 +173,7 @@ describe('Order Admin CRUD tests', function () {
           .expect(422)
           .end(function (orderSaveErr, orderSaveRes) {
             // Set message assertion
-            (orderSaveRes.body.message).should.match('Title cannot be blank');
+            (orderSaveRes.body.message).should.match('OrderRef cannot be blank');
 
             // Handle order save error
             done(orderSaveErr);
@@ -262,7 +262,7 @@ describe('Order Admin CRUD tests', function () {
 
                 // Set assertions
                 (orderInfoRes.body._id).should.equal(orderSaveRes.body._id);
-                (orderInfoRes.body.title).should.equal(order.title);
+                (orderInfoRes.body.orderRef).should.equal(order.orderRef);
 
                 // Assert that the "isCurrentUserOwner" field is set to true since the current User created it
                 (orderInfoRes.body.isCurrentUserOwner).should.equal(true);

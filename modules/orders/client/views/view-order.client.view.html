@@ -1,15 +1,15 @@
 <section>
   <div class="page-header">
-    <h1 ng-bind="vm.order.title"></h1>
+    <h1 ng-bind="vm.order.orderRef"></h1>
   </div>
+  <p class="lead" ng-bind="vm.order.content"></p>
   <small>
     <em class="text-muted">
-      Posted on
+      Created on
       <span ng-bind="vm.order.created | date:'mediumDate'"></span>
       by
       <span ng-if="vm.order.user" ng-bind="vm.order.user.displayName"></span>
       <span ng-if="!vm.order.user">Deleted User</span>
     </em>
   </small>
-  <p class="lead" ng-bind="vm.order.content"></p>
 </section>

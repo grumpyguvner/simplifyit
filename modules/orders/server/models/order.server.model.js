@@ -10,20 +10,20 @@ var mongoose = require('mongoose'),
  * Order Schema
  */
 var OrderSchema = new Schema({
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  title: {
+  orderRef: {
     type: String,
     default: '',
     trim: true,
-    required: 'Title cannot be blank'
+    required: 'Order Reference cannot be blank'
   },
   content: {
     type: String,
     default: '',
     trim: true
+  },
+  created: {
+    type: Date,
+    default: Date.now
   },
   user: {
     type: Schema.ObjectId,

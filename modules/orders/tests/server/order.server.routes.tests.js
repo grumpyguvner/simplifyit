@@ -51,7 +51,7 @@ describe('Order CRUD tests', function () {
     // Save a user to the test db and create new order
     user.save(function () {
       order = {
-        title: 'Order Title',
+        orderRef: 'Order Reference',
         content: 'Order Content'
       };
 
@@ -138,7 +138,7 @@ describe('Order CRUD tests', function () {
       request(app).get('/api/orders/' + orderObj._id)
         .end(function (req, res) {
           // Set assertion
-          res.body.should.be.instanceof(Object).and.have.property('title', order.title);
+          res.body.should.be.instanceof(Object).and.have.property('orderRef', order.orderRef);
 
           // Call the assertion callback
           done();
@@ -261,7 +261,7 @@ describe('Order CRUD tests', function () {
               }
 
               // Set assertions on new order
-              (orderSaveRes.body.title).should.equal(order.title);
+              (orderSaveRes.body.orderRef).should.equal(order.orderRef);
               should.exist(orderSaveRes.body.user);
               should.equal(orderSaveRes.body.user._id, orphanId);
 
@@ -288,7 +288,7 @@ describe('Order CRUD tests', function () {
 
                         // Set assertions
                         (orderInfoRes.body._id).should.equal(orderSaveRes.body._id);
-                        (orderInfoRes.body.title).should.equal(order.title);
+                        (orderInfoRes.body.orderRef).should.equal(order.orderRef);
                         should.equal(orderInfoRes.body.user, undefined);
 
                         // Call the assertion callback
@@ -310,7 +310,7 @@ describe('Order CRUD tests', function () {
       request(app).get('/api/orders/' + orderObj._id)
         .end(function (req, res) {
           // Set assertion
-          res.body.should.be.instanceof(Object).and.have.property('title', order.title);
+          res.body.should.be.instanceof(Object).and.have.property('orderRef', order.orderRef);
           // Assert the custom field "isCurrentUserOwner" is set to false for the un-authenticated User
           res.body.should.be.instanceof(Object).and.have.property('isCurrentUserOwner', false);
           // Call the assertion callback
@@ -368,7 +368,7 @@ describe('Order CRUD tests', function () {
               }
 
               // Set assertions on new order
-              (orderSaveRes.body.title).should.equal(order.title);
+              (orderSaveRes.body.orderRef).should.equal(order.orderRef);
               should.exist(orderSaveRes.body.user);
               should.equal(orderSaveRes.body.user._id, userId);
 
@@ -393,7 +393,7 @@ describe('Order CRUD tests', function () {
 
                       // Set assertions
                       (orderInfoRes.body._id).should.equal(orderSaveRes.body._id);
-                      (orderInfoRes.body.title).should.equal(order.title);
+                      (orderInfoRes.body.orderRef).should.equal(order.orderRef);
                       // Assert that the custom field "isCurrentUserOwner" is set to false since the current User didn't create it
                       (orderInfoRes.body.isCurrentUserOwner).should.equal(false);
 

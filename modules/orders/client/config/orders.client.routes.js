@@ -32,7 +32,7 @@
           orderResolve: getOrder
         },
         data: {
-          pageTitle: 'Order {{ orderResolve.title }}'
+          pageTitle: 'Order {{ orderResolve.orderRef }}'
         }
       });
   }

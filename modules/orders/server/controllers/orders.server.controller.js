@@ -46,7 +46,7 @@ exports.read = function (req, res) {
 exports.update = function (req, res) {
   var order = req.order;
 
-  order.title = req.body.title;
+  order.orderRef = req.body.orderRef;
   order.content = req.body.content;
 
   order.save(function (err) {
