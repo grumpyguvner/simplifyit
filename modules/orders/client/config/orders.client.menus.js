@@ -11,7 +11,7 @@
     menuService.addMenuItem('topbar', {
       title: 'Order Book',
       state: 'orders.list',
-      roles: ['*']
+      roles: ['user']
     });
 
   }
