@@ -31,14 +31,14 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }]
   }, {
-    roles: ['guest'],
-    allows: [{
+//    roles: ['guest'],
+//    allows: [{
 //      resources: '/api/orders',
 //      permissions: ['get']
-    }, {
+//    }, {
 //      resources: '/api/orders/:orderId',
 //      permissions: ['get']
-    }]
+//    }]
   }]);
 };
 
