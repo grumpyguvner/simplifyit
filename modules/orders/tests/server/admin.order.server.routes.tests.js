@@ -52,7 +52,8 @@ describe('Order Admin CRUD tests', function () {
     user.save(function () {
       order = {
         orderRef: 'Order Reference',
-        content: 'Order Content'
+        content: 'Order Content',
+        poRef: 'PO Reference'
       };
 
       done();

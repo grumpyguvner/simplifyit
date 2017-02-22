@@ -21,6 +21,11 @@ var OrderSchema = new Schema({
     default: '',
     trim: true
   },
+  poRef: {
+    type: String,
+    default: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now

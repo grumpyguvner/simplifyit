@@ -48,6 +48,7 @@ exports.update = function (req, res) {
 
   order.orderRef = req.body.orderRef;
   order.content = req.body.content;
+  order.poRef = req.body.poRef;
 
   order.save(function (err) {
     if (err) {

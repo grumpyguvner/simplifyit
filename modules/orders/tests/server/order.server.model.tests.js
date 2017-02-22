@@ -33,6 +33,7 @@ describe('Order Model Unit Tests:', function () {
       order = new Order({
         orderRef: 'Order Reference',
         content: 'Order Content',
+        poRef: 'PO Reference',
         user: user
       });
 

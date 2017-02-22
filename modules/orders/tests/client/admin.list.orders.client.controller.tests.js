@@ -54,7 +54,8 @@
       mockOrder = new OrdersService({
         _id: '525a8422f6d0f87f0e407a33',
         orderRef: 'An Order about MEAN',
-        content: 'MEAN rocks!'
+        content: 'MEAN rocks!',
+        poRef: 'PO1'
       });
 
       // Mock logged in user
