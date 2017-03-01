@@ -16,6 +16,10 @@ var OrderSchema = new Schema({
     trim: true,
     required: 'Order Reference cannot be blank'
   },
+  customer: {
+    type: Schema.ObjectId,
+    ref: 'Contact'
+  },
   content: {
     type: String,
     default: '',

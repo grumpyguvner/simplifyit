@@ -17,6 +17,7 @@
         <span ng-if="!order.user">Deleted User</span>
       </small>
       <h4 class="list-group-item-heading" data-ng-bind="order.orderRef"></h4>
+      <p class="list-group-item-text" data-ng-bind="order.customer.displayName"></p>
       <p class="list-group-item-text" data-ng-bind="order.content"></p>
       <p class="list-group-item-text" data-ng-bind="order.poRef"></p>
     </a>
