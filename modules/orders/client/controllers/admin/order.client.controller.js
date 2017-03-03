@@ -12,11 +12,11 @@
 
     vm.order = order;
     vm.customers = [
-      {displayName:'John', _id:25},
-      {displayName:'Jessie', _id:30},
-      {displayName:'Johanna', _id:28},
-      {displayName:'Joy', _id:15},
-      {displayName:'Mary', _id:29}
+      { displayName: 'John', _id: 25 },
+      { displayName: 'Jessie', _id: 30 },
+      { displayName: 'Johanna', _id: 28 },
+      { displayName: 'Joy', _id: 15 },
+      { displayName: 'Mary', _id: 29 }
     ];
     vm.authentication = Authentication;
     vm.form = {};
