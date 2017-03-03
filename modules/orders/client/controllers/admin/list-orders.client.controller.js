@@ -12,7 +12,7 @@
 
     vm.orders = OrdersService.query();
 
-    //select data options
+    // select data options
 //    var select;
 //    select.customers = ContactsService.query();
 
